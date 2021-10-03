@@ -61,6 +61,7 @@
                 v-for="item in hobbies"
                 :key="item.content"
                 class="mr-2 mt-3"
+                :color="item.color"
               >
                 <v-avatar>
                   <v-icon>{{ item.icon }}</v-icon>
@@ -78,7 +79,7 @@
                 :size="100"
                 :width="6"
                 value="70"
-                color="teal"
+                color="#FFEBEE"
               >
                 Listening
               </v-progress-circular>
@@ -87,7 +88,7 @@
                 :size="100"
                 :width="6"
                 value="80"
-                color="teal"
+                color="#FFEBEE"
                 class="mx-10"
               >
                 Reading
@@ -97,7 +98,7 @@
                 :size="100"
                 :width="6"
                 value="60"
-                color="teal"
+                color="#FFEBEE"
               >
                 Speaking
               </v-progress-circular>
@@ -145,7 +146,7 @@
               <v-row>
                 <v-col cols="12" md="4">2012 - 2016</v-col>
                 <v-col cols="12" md="8">
-                  <strong>Good certificate of merit</strong>
+                  <strong>Good certificate</strong>
                   <div>
                     <a
                       target="_blank"
@@ -160,7 +161,7 @@
               <v-row>
                 <v-col cols="12" md="4">2016 - 2018</v-col>
                 <v-col cols="12" md="8">
-                  <strong>Good certificate of merit</strong>
+                  <strong>Good certificate</strong>
                   <div>
                     <a
                       target="_blank"
@@ -197,19 +198,29 @@
               <v-divider></v-divider>
               <v-container>
                 <v-row>
-                  <v-col cols="12" md="6" v-for="item in skills" :key="item.title">
+                  <v-col
+                    cols="12"
+                    md="6"
+                    v-for="item in skills"
+                    :key="item.title"
+                  >
                     <div>
-                      <v-avatar >
+                      <v-avatar>
                         <v-icon>{{ item.icon }}</v-icon>
                       </v-avatar>
                       {{ item.title }}
                     </div>
+
                     <v-progress-linear
                       :color="item.color"
-                      height="10"
-                      value="10"
-                      striped
-                    ></v-progress-linear>
+                      height="14"
+                      :value="item.value"
+                      rounded
+                    >
+                      <template v-slot:default="{ value }">
+                        <strong>{{ Math.ceil(value) }}%</strong>
+                      </template></v-progress-linear
+                    >
                   </v-col>
                 </v-row>
               </v-container>
@@ -230,119 +241,124 @@ export default {
           icon: "mdi-react",
           title: "React",
           color: "#61dbfb",
-          value: "",
+          value: "41",
         },
         {
           icon: "mdi-vuejs",
           title: "VueJS Framework",
           color: "#42B883",
-          value: "",
+          value: "73",
         },
         {
           icon: "mdi-language-javascript",
           title: "Javascript",
-          color: "#f0db4f",
-          value: "",
+          color: "#FFD600",
+          value: "71",
         },
         {
           icon: "mdi-language-html5",
           title: "HTML",
           color: "#e34c26",
-          value: "",    
+          value: "62",
         },
         {
           icon: "mdi-language-css3",
           title: "CSS",
           color: "#2965f1",
-          value: "",
+          value: "42",
         },
         {
           icon: "mdi-tailwind",
           title: "Tailwind CSS",
           color: "#26C6DA",
-          value: "",
+          value: "27",
         },
-         {
+        {
           icon: "mdi-vuetify",
           title: "Vuetify",
           color: "#039BE5",
-          value: "",
+          value: "66",
         },
-         {
-          icon: "mdi-language-cpp",
-          title: "C/C++/.NET",
-          color: "#9575CD",
-          value: "",
-        },
-         {
+        {
           icon: "mdi-bootstrap",
           title: "Bootstrap",
           color: "#563d7c",
-          value: "",
-        },  
+          value: "17",
+        },
       ],
+
       proud: [
         {
-          icon: "mdi-help-rhombus-outline",
-          title: "........................",
-          subtitle: "....................",
+          icon: "mdi-trophy",
+          title: "Achieve scholarships",
+          subtitle: "Year 1, Year 2, Year 3",
         },
         {
-          icon: "mdi-bookmark-music",
-          title: "........................",
-          subtitle: "....................",
+          icon: "mdi-trophy-award",
+          title: "Graduation ranking is excellent",
+          subtitle: "In University",
         },
         {
           icon: "mdi-timer-sand",
-          title: "........................",
-          subtitle: "....................",
+          title: "The ability to schedule time",
+          subtitle: "Know how to organize your time properly",
         },
         {
           icon: "mdi-account-multiple-outline",
-          title: "........................",
-          subtitle: "....................",
+          title: "Lead many groups and achieve high results",
+          subtitle: "During university time ",
         },
       ],
       hobbies: [
         {
           icon: "mdi-bullseye",
           content: "Getting out of Safe Zone",
+          color: '#E57373'
         },
         {
           icon: "mdi-biohazard",
           content: "Challenges",
+          color: '#FF80AB'
         },
         {
           icon: "mdi-bike",
           content: "Cycling",
+          color: '#CE93D8'
         },
         {
           icon: "mdi-image-filter-hdr",
           content: "Nature",
+          color: '#2E7D32'
         },
         {
           icon: "mdi-music",
           content: "Music",
+          color: '#B39DDB'
         },
         {
           icon: "mdi-gamepad-variant",
           content: "Games",
+          color: '#80DEEA'
         },
         {
           icon: "mdi-airplane-takeoff",
           content: "Travel",
+          color: '#26A69A'
         },
         {
           icon: "mdi-book",
           content: "Book",
+          color: '#40C4FF'
         },
         {
           icon: "mdi-account-group",
           content: "Leadership",
+          color: '#DCE775'
         },
         {
           icon: "mdi-bug",
           content: "Making bugs!",
+          color: '#D7CCC8'
         },
       ],
       info: [
