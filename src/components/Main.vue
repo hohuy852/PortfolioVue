@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="6" md="4">
-        <v-card>
+      <v-col cols="12" md="4">
+        <v-card dark>
           <div class="text-center">
             <v-avatar class="mt-3" width="150" height="150">
               <v-img
@@ -14,7 +14,7 @@
 
           <div class="text-center mt-3">
             <h1>Ho Sy Huy</h1>
-            <span>A front end developer</span>
+            <span>A fresher front-end developer</span>
           </div>
           <v-container class="mt-3">
             <!-- Infomations -->
@@ -43,9 +43,12 @@
                 </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title>
-                    <a :href="item.content" style="text-decoration: none">{{
-                      item.content
-                    }}</a>
+                    <a
+                      :href="item.content"
+                      target="_blank"
+                      style="text-decoration: none"
+                      >{{ item.content }}</a
+                    >
                   </v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
@@ -139,25 +142,77 @@
             <v-card-title> Education </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
-              <v-list>
-                <v-list-item v-for="item in proud" :key="item.title">
-                  <v-list-item-avatar>
-                    <v-icon>{{ item.icon }}</v-icon>
-                  </v-list-item-avatar>
-                  <v-list-item-content>
-                    <v-list-item-title> {{ item.title }} </v-list-item-title>
-                    <v-list-item-subtitle>
-                      {{ item.subtitle }}
-                    </v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
+              <v-row>
+                <v-col cols="12" md="4">2012 - 2016</v-col>
+                <v-col cols="12" md="8">
+                  <strong>Good certificate of merit</strong>
+                  <div>
+                    <a
+                      target="_blank"
+                      href="http://ninhthuan.edu.vn/Default.aspx?sname=thptnguyendu&sid=1204&pageid=29310"
+                      style="text-decoration: none"
+                    >
+                      Quang Trung Junior High School, Ninh Thuan</a
+                    >
+                  </div>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" md="4">2016 - 2018</v-col>
+                <v-col cols="12" md="8">
+                  <strong>Good certificate of merit</strong>
+                  <div>
+                    <a
+                      target="_blank"
+                      href="http://ninhthuan.edu.vn/Default.aspx?sname=thptnguyendu&sid=1204&pageid=29310"
+                      style="text-decoration: none"
+                      >Nguyen Du High School, Ninh Thuan</a
+                    >
+                  </div>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" md="4">2018 - 2022 (not finished yet)</v-col>
+                <v-col cols="12" md="8">
+                  <strong>Engineering degree, Information Technology</strong>
+
+                  <div>
+                    <a
+                      target="_blank"
+                      href="http://ut.edu.vn/"
+                      style="text-decoration: none"
+                      >Ho Chi Minh City University of Transport</a
+                    >
+                  </div>
+                  <div>
+                    Became a member of University Academic Association of
+                    Computer Science
+                  </div>
+                </v-col>
+              </v-row>
             </v-card-text>
             <!-- Skill and Expertize -->
             <v-card flat>
               <v-card-title> Skill and Expertize </v-card-title>
-                <v-divider></v-divider>
-                
+              <v-divider></v-divider>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" md="6" v-for="item in skills" :key="item.title">
+                    <div>
+                      <v-avatar >
+                        <v-icon>{{ item.icon }}</v-icon>
+                      </v-avatar>
+                      {{ item.title }}
+                    </div>
+                    <v-progress-linear
+                      :color="item.color"
+                      height="10"
+                      value="10"
+                      striped
+                    ></v-progress-linear>
+                  </v-col>
+                </v-row>
+              </v-container>
             </v-card>
           </v-container>
         </v-card>
@@ -170,6 +225,62 @@
 export default {
   data() {
     return {
+      skills: [
+        {
+          icon: "mdi-react",
+          title: "React",
+          color: "#61dbfb",
+          value: "",
+        },
+        {
+          icon: "mdi-vuejs",
+          title: "VueJS Framework",
+          color: "#42B883",
+          value: "",
+        },
+        {
+          icon: "mdi-language-javascript",
+          title: "Javascript",
+          color: "#f0db4f",
+          value: "",
+        },
+        {
+          icon: "mdi-language-html5",
+          title: "HTML",
+          color: "#e34c26",
+          value: "",    
+        },
+        {
+          icon: "mdi-language-css3",
+          title: "CSS",
+          color: "#2965f1",
+          value: "",
+        },
+        {
+          icon: "mdi-tailwind",
+          title: "Tailwind CSS",
+          color: "#26C6DA",
+          value: "",
+        },
+         {
+          icon: "mdi-vuetify",
+          title: "Vuetify",
+          color: "#039BE5",
+          value: "",
+        },
+         {
+          icon: "mdi-language-cpp",
+          title: "C/C++/.NET",
+          color: "#9575CD",
+          value: "",
+        },
+         {
+          icon: "mdi-bootstrap",
+          title: "Bootstrap",
+          color: "#563d7c",
+          value: "",
+        },  
+      ],
       proud: [
         {
           icon: "mdi-help-rhombus-outline",
@@ -290,5 +401,15 @@ export default {
 <style>
 .v-tab {
   text-transform: none !important;
+}
+.theme--dark.v-sheet {
+  background-color: #37474f !important;
+  border-color: #1e1e1e;
+  color: #ffffff;
+}
+.theme--light.v-sheet {
+  background-color: #cfd8dc !important;
+  border-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
 }
 </style>
