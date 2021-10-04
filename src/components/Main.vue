@@ -266,7 +266,7 @@ export default {
           icon: "mdi-language-javascript",
           title: "Javascript",
           color: "#FFD600",
-          value: "71",
+          value: "41",
         },
         {
           icon: "mdi-language-html5",
