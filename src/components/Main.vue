@@ -6,7 +6,7 @@
           <div class="text-center">
             <v-avatar class="mt-3" width="150" height="150">
               <v-img
-                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+                src="@/assets/avatar.jpg"
               >
               </v-img>
             </v-avatar>
@@ -131,7 +131,8 @@
             <v-card-text>
               I'm interested and skilled in different topics of Information
               Technology including programming, web development, and computer
-              and network security and I've always wanted to find a job related to something I'm passionate about
+              and network security and I've always wanted to find a job related
+              to something I'm passionate about
             </v-card-text>
             <!-- What am i proud of ? -->
             <v-card-title> What am i proud of ? </v-card-title>
