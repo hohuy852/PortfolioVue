@@ -198,10 +198,10 @@
                       >Ho Chi Minh City University of Transport</a
                     >
                   </div>
-                  <div>
+                  <!-- <div>
                     Became a member of University Academic Association of
                     Computer Science
-                  </div>
+                  </div> -->
                 </v-col>
               </v-row>
             </v-card-text>
