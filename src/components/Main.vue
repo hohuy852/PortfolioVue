@@ -254,7 +254,7 @@ export default {
           icon: "mdi-react",
           title: "React",
           color: "#61dbfb",
-          value: "41",
+          value: "31",
         },
         {
           icon: "mdi-vuejs",
@@ -278,13 +278,13 @@ export default {
           icon: "mdi-language-css3",
           title: "CSS",
           color: "#2965f1",
-          value: "42",
+          value: "32",
         },
         {
           icon: "mdi-tailwind",
           title: "Tailwind CSS",
           color: "#26C6DA",
-          value: "27",
+          value: "17",
         },
         {
           icon: "mdi-vuetify",
