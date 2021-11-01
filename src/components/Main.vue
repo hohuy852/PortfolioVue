@@ -2,13 +2,10 @@
   <v-container>
     <v-row>
       <v-col cols="12" md="4">
-        <v-card dark>
+        <v-card height="1382" dark>
           <div class="text-center">
             <v-avatar class="mt-3" width="150" height="150">
-              <v-img
-                src="@/assets/avatar.jpg"
-              >
-              </v-img>
+              <v-img src="@/assets/avatar.jpg"> </v-img>
             </v-avatar>
           </div>
 
@@ -111,7 +108,7 @@
         <v-card>
           <v-container>
             <!-- introduce -->
-            <v-card-title> Who am i ? </v-card-title>
+            <v-card-title class="font-weight-bold"> Who am i ? </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
               I'm a developer born in Nghe An, Vietnam. I'm a pretty introverted
@@ -135,7 +132,9 @@
               to something I'm passionate about
             </v-card-text>
             <!-- What am i proud of ? -->
-            <v-card-title> What am i proud of ? </v-card-title>
+            <v-card-title class="font-weight-bold">
+              What am i proud of ?
+            </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
               <v-list>
@@ -153,7 +152,7 @@
               </v-list>
             </v-card-text>
             <!-- Education -->
-            <v-card-title> Education </v-card-title>
+            <v-card-title class="font-weight-bold"> Education </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
               <v-row>
@@ -207,7 +206,9 @@
             </v-card-text>
             <!-- Skill and Expertize -->
             <v-card flat>
-              <v-card-title> Skill and Expertize </v-card-title>
+              <v-card-title class="font-weight-bold">
+                Skill and Expertize
+              </v-card-title>
               <v-divider></v-divider>
               <v-container>
                 <v-row>
@@ -242,6 +243,56 @@
         </v-card>
       </v-col>
     </v-row>
+    <!-- Personal Project -->
+    <v-row>
+      <v-col cols="12">
+        <v-card>
+          <v-container>
+            <v-card-title class="font-weight-bold">
+              Personal Project Timeline
+            </v-card-title>
+            <v-timeline>
+              <v-timeline-item
+                v-for="(year, i) in years"
+                :key="i"
+                :color="year.color"
+                small
+              >
+                <template v-slot:opposite>
+                  <v-row align="center">
+                    <v-col cols="8" class="mx-auto" v-if="year.img != ''">
+                      <v-img
+                        class="rounded"
+                        width="600"
+                        height="300"
+                        :src="year.img"
+                      >
+                      </v-img>
+                    </v-col>
+                    <v-col cols="4">
+                      <span
+                        :class="`ml-auto headline font-weight-bold ${year.color}--text`"
+                        v-text="year.year"
+                      ></span
+                    ></v-col>
+                  </v-row>
+                </template>
+                <div class="py-4">
+                  <h2
+                    :class="`headline font-weight-bold mb-4 ${year.color}--text`"
+                  >
+                    {{ year.title }}
+                  </h2>
+                  <div>
+                    {{ year.subtitle }}
+                  </div>
+                </div>
+              </v-timeline-item>
+            </v-timeline>
+          </v-container>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -249,6 +300,54 @@
 export default {
   data() {
     return {
+      years: [
+        {
+          color: "cyan",
+          img: "https://raw.githubusercontent.com/hohuy852/github-readme-icons/main/main/cv/2021/vuetify-shop.png",
+          year: "3/8/2021",
+          title: "Vuetify Shop",
+          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
+                  \n
+                  My works contain: \n
+            `,
+        },
+        {
+          color: "green",
+          year: "1970",
+          title: "Vuetify Shop Admin",
+          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
+                  \n
+                  My works contain: \n
+            `,
+        },
+        {
+          color: "pink",
+          year: "1980",
+          title: "CV",
+          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
+                  \n
+                  My works contain: \n
+            `,
+        },
+        {
+          color: "amber",
+          year: "1990",
+          title: "Watchflix",
+          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
+                  \n
+                  My works contain: \n
+            `,
+        },
+        {
+          color: "orange",
+          year: "2000",
+          title: "....",
+          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
+                  \n
+                  My works contain: \n
+            `,
+        },
+      ],
       skills: [
         {
           icon: "mdi-react",
@@ -284,7 +383,7 @@ export default {
           icon: "mdi-tailwind",
           title: "Tailwind CSS",
           color: "#26C6DA",
-          value: "17",
+          value: "43",
         },
         {
           icon: "mdi-vuetify",
