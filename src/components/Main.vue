@@ -259,32 +259,24 @@
                 small
               >
                 <template v-slot:opposite>
-                  <v-row align="center">
-                    <v-col cols="8" class="mx-auto" v-if="year.img != ''">
-                      <v-img
-                        class="rounded"
-                        width="600"
-                        height="300"
-                        :src="year.img"
-                      >
-                      </v-img>
-                    </v-col>
-                    <v-col cols="4">
-                      <span
-                        :class="`ml-auto headline font-weight-bold ${year.color}--text`"
-                        v-text="year.year"
-                      ></span
-                    ></v-col>
-                  </v-row>
+                  <span
+                    :class="`ml-auto headline font-weight-bold ${year.color}--text`"
+                    v-text="year.year"
+                  ></span>
                 </template>
                 <div class="py-4">
-                  <h2
-                    :class="`headline font-weight-bold mb-4 ${year.color}--text`"
+                  <a :href="year.link" target="_blank"
+                    :class="`text-h5 headline font-weight-bold mb-4 ${year.color}--text`"
                   >
                     {{ year.title }}
-                  </h2>
-                  <div>
+                  </a>
+                  <div class="font-weight-bold">
                     {{ year.subtitle }}
+                  </div>
+                  <div class="ml-3 d-flex flex-column space-between">
+                    <div v-for="(item, i) in year.comment" :key="i">
+                      {{ item }}
+                    </div>
                   </div>
                 </div>
               </v-timeline-item>
@@ -303,49 +295,66 @@ export default {
       years: [
         {
           color: "cyan",
-          img: "https://raw.githubusercontent.com/hohuy852/github-readme-icons/main/main/cv/2021/vuetify-shop.png",
+          link: "https://vuetify-shop.netlify.app/",
           year: "3/8/2021",
           title: "Vuetify Shop",
-          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
-                  \n
-                  My works contain: \n
-            `,
+          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project`,
+          comment: [
+            "This project was built on: ",
+            "VueJs (Vuex) as front end framework",
+            "Vuetify as Material Design Framework",
+            "NodeJs, MongoDB as backend",
+            "Socket Communication",
+            "........",
+          ],
         },
         {
           color: "green",
-          year: "1970",
+          link: "https://admin-vuetifyshop.netlify.app/",
+          year: "3/9/2021",
           title: "Vuetify Shop Admin",
-          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
-                  \n
-                  My works contain: \n
-            `,
+          subtitle: `This is the project used to manage vuetify shop, i started this project after starting vuetify shop project about 1 month`,
+          comment: [
+            "This project was built on: ",
+            "VueJs (Vuex) as front end framework",
+            "Vuetify as Material Design Framework",
+            "NodeJs, MongoDB as backend",
+            "Socket Communication",
+            "........",
+          ],
         },
         {
           color: "pink",
-          year: "1980",
-          title: "CV",
-          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
-                  \n
-                  My works contain: \n
-            `,
+          link: "https://vuetify-resume.netlify.app/",
+          year: "2/10/2021 ",
+          title: "Resume",
+          subtitle: `This project was started by me when I wrote my first resume`,
+          comment: [
+            "This project was built on: ",
+            "VueJs as front end framework",
+            "Vuetify as Material Design Framework",
+          ],
         },
         {
           color: "amber",
-          year: "1990",
+          link: "https://vue-anime-movie.netlify.app",
+          year: "22/10/2021",
           title: "Watchflix",
-          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
-                  \n
-                  My works contain: \n
-            `,
+          subtitle: `This is a project about a movie watching website using an external API, this website only provides the basic functions of a movie website.`,
+          comment: [
+            "This project was built on: ",
+            "VueJs (Vuex) as front end framework",
+            "Tailwind as CSS Framework",
+            "AniApi as external API",
+            "......",
+          ],
         },
         {
           color: "orange",
-          year: "2000",
-          title: "....",
-          subtitle: `This is the first project that i started with vuejs with libraries like vuex , vuetify, vue router... but i don't do the back end, because this is also my internship project
-                  \n
-                  My works contain: \n
-            `,
+          year: "Countinue....  ",
+          title: "",
+          subtitle: ``,
+          comment: [],
         },
       ],
       skills: [
@@ -539,5 +548,8 @@ export default {
   background-color: #cfd8dc !important;
   border-color: #ffffff;
   color: rgba(0, 0, 0, 0.87);
+}
+a{
+  text-decoration: none;
 }
 </style>
