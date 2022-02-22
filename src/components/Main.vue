@@ -11,7 +11,7 @@
 
           <div class="text-center mt-3">
             <h1>Ho Sy Huy</h1>
-            <span>A fresher front-end developer</span>
+            <span>Front-end developer</span>
           </div>
           <v-container class="mt-3">
             <!-- Infomations -->
@@ -75,7 +75,7 @@
                 :rotate="360"
                 :size="100"
                 :width="6"
-                value="70"
+                value="64"
                 color="#FFEBEE"
               >
                 Listening
@@ -84,7 +84,7 @@
                 :rotate="360"
                 :size="100"
                 :width="6"
-                value="80"
+                value="68"
                 color="#FFEBEE"
                 class="mx-10"
               >
@@ -94,7 +94,7 @@
                 :rotate="360"
                 :size="100"
                 :width="6"
-                value="60"
+                value="51"
                 color="#FFEBEE"
               >
                 Speaking
@@ -260,13 +260,19 @@
               >
                 <template v-slot:opposite>
                   <span
-                    :class="`ml-auto headline font-weight-bold ${year.color}--text`"
+                    :class="
+                      `ml-auto headline font-weight-bold ${year.color}--text`
+                    "
                     v-text="year.year"
                   ></span>
                 </template>
                 <div class="py-4">
-                  <a :href="year.link" target="_blank"
-                    :class="`text-h5 headline font-weight-bold mb-4 ${year.color}--text`"
+                  <a
+                    :href="year.link"
+                    target="_blank"
+                    :class="
+                      `text-h5 headline font-weight-bold mb-4 ${year.color}--text`
+                    "
                   >
                     {{ year.title }}
                   </a>
@@ -351,10 +357,36 @@ export default {
         },
         {
           color: "orange",
-          year: "Countinue....  ",
+          year: "15/12/2021  ",
+          title: "Weather/News App",
+          subtitle: `This is a project about a weather and news website using an external API, this website only provides the basic functions of a weather website.`,
+          comment: [
+            "This project was built on: ",
+            "React (Redux) as front end framework",
+            "Tailwind as CSS Framework",
+            "NewsAPI, OpenWeatherMap API as external API",
+            "......",
+          ],
+        },
+         {
+          color: "blue",
+          year: "21/1/2022  ",
+          title: "Portfolio React",
+          subtitle: `This is a project about portfolio page.`,
+          comment: [
+            "This project was built on: ",
+            "React as front end framework",
+            "Tailwind as CSS Framework",
+          ],
+        },
+         {
+          color: "red",
+          year: "Continue...",
           title: "",
           subtitle: ``,
-          comment: [],
+          comment: [
+           
+          ],
         },
       ],
       skills: [
@@ -362,7 +394,7 @@ export default {
           icon: "mdi-react",
           title: "React",
           color: "#61dbfb",
-          value: "31",
+          value: "41",
         },
         {
           icon: "mdi-vuejs",
@@ -386,7 +418,7 @@ export default {
           icon: "mdi-language-css3",
           title: "CSS",
           color: "#2965f1",
-          value: "32",
+          value: "52",
         },
         {
           icon: "mdi-tailwind",
@@ -486,12 +518,12 @@ export default {
         {
           icon: "mdi-email",
           title: "Email",
-          content: "syhuy851@gmail.com",
+          content: "syhuy851.work@gmail.com",
         },
         {
           icon: "mdi-earth",
           title: "My website",
-          content: "hohuy.com",
+          content: "https://vuetify-resume.netlify.app",
         },
         {
           icon: "mdi-cake-layered",
@@ -549,7 +581,7 @@ export default {
   border-color: #ffffff;
   color: rgba(0, 0, 0, 0.87);
 }
-a{
+a {
   text-decoration: none;
 }
 </style>
